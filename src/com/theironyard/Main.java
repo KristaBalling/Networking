@@ -25,6 +25,13 @@ public class Main {
                 return;
             }
 
+            BufferedReader inputReader = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+
+            String line;
+                    while((line = inputReader.readLine()) != null) {
+                    }
+                    inputReader.close();
 
 
 
@@ -35,8 +42,7 @@ public class Main {
 //            urlConnection.setDoOutput(true);
 //            urlConnection.connect();
 //
-//            BufferedReader inputStream = new BufferedReader(
-//                    new InputStreamReader(urlConnection.getInputStream()));
+//
 //
 //            Map<String, List<String>> headerFields = urlConnection.getHeaderFields();
 //            for(Map.Entry<String, List<String>> entry : headerFields.entrySet()) {
@@ -47,12 +53,7 @@ public class Main {
 //                    System.out.println("value = " + value);
 //                }
 //            }
-//                    String line = "";
-//                    while(line != null) {
-//                        line = inputStream.readLine();
-//                        System.out.println(line);
-//                    }
-//                    inputStream.close();
+//
         } catch (MalformedURLException e) {
             System.out.println("URL Malformed: " + e.getMessage());
         } catch (IOException e) {
